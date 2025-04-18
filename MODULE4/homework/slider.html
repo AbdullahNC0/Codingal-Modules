@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <title>Slide-show</title>
+    <style type="text/css">
+    .slide img
+    {
+        width: 1000px;
+        height: 510px;
+        float: left;
+    } 
+    .slideshow
+    {  
+            width: 1000px;
+            height: 510px;
+            Margin: 0 auto;
+            overflow: hidden;
+    }
+    .slide
+    {
+        animation: slide 10s ease infinite;
+        width: calc(1000px* 3);
+    }
+    @keyframes slide 
+    {
+    20% {
+        margin-left: 0px; }
+    40% {
+    margin-left: calc(-1000px*1); }
+    60%  {
+        margin-left: calc(-1000px*2);}
+    }
+    </style>
+  </head>
+  <body>
+    <div class="slideshow">
+        <div class="Slide_wrapper"></div>
+        <div class="slide">
+        <img src="los angeles.jpeg"></div>
+        <div class="slide">
+            <img src="chicago.jpeg"></div>
+            <div class="slide">
+                <img src="new york.jpeg">
+            </div>
+
+    </div>
+  
+        
+</body>
+</html>
