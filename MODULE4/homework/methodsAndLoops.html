@@ -1,0 +1,19 @@
+<html>
+    <body>
+        <h2>JavaScript String Methods And Loops</h2>
+        <p>Numbers from 1 to 10</p>
+        <p id="result"></p>
+        <script>
+            var numbers = "";
+            for (var i = 1;i < 11; i++) {
+                numbers += i + "<br>";
+            }
+            document.getElementById("result").innerHTML = numbers;
+
+            document.write("<p>This random value is "+ Math.floor(Math.random() * 100) + "</p>");
+
+            var date = new Date();
+            document.write("<p>Today's date is "+ date.getDate() + "</p>");
+            </script>
+        </body>
+</html>

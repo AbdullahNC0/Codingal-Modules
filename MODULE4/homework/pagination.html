@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cascading Effect Without Pagination</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* Base style for elements */
+    .cascade-element {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: cascadeIn 0.5s ease forwards;
+    }
+
+    /* Add delay for each element for cascading effect */
+    .cascade-element:nth-child(1) { animation-delay: 0.2s; }
+    .cascade-element:nth-child(2) { animation-delay: 0.4s; }
+    .cascade-element:nth-child(3) { animation-delay: 0.6s; }
+    .cascade-element:nth-child(4) { animation-delay: 0.8s; }
+    .cascade-element:nth-child(5) { animation-delay: 1s; }
+
+    /* Cascading effect keyframes */
+    @keyframes cascadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container mt-5">
+    <h2 class="text-center mb-4">Cascading Effect on Elements</h2>
+    
+    <!-- Just simple elements like divs or paragraphs -->
+    <div class="cascade-element">Element 1</div>
+    <div class="cascade-element">Element 2</div>
+    <div class="cascade-element">Element 3</div>
+    <div class="cascade-element">Element 4</div>
+    <div class="cascade-element">Element 5</div>
+  </div>
+
+</body>
+</html>
