@@ -1,41 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Navbar</title>
-<style>
-body {
-margin: 0;
-font-family: Arial, Helvetica, sans-serif;}
-
-.topnav {
-overflow: hidden;
-background-color: #c5c7c0;}
-
-.topnav a {
-float: left;
-color: #531aff;
-text-align: center;
-padding: 14px 16px;
-text-decoration: none;
-font-size: 17px;}
-
-.topnav a:hover {
-background-color: #cada934c;
-color : black;}
-
-.topnav a.active {
-background-color: #ff9666;
-color: black;}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Pagination</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 
-<div class="topnav">
-<a class="active" href="#home">Home</a>
-<a href="#news">About_Us</a>
-<a href="#contact">Gallery</a>
-<a href="#about">Contact_Us</a>
-</div>
+  <div class="container mt-5">
+    <h2>Pagination Example</h2>
+    <!-- Simple Pagination with Previous and Next -->
+    <nav>
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 </html>
