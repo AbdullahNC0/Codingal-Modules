@@ -3,26 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hobby Section</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <title>Unequal Grid</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    canvas {
+      border: 1px solid black;
+    }
+  </style>
 </head>
 <body>
+  <canvas id="gridCanvas"></canvas>
 
-  <div class="container mt-5">
-    <h2>My Hobbies</h2>
-    <p>Here are some of my hobbies:</p>
-    
-    <ul>
-      <li>Reading books</li>
-      <li>Traveling to new places</li>
-      <li>Cooking new recipes</li>
-    </ul>
-  </div>
+  <script>
+    // Function to draw a grid with unequal cells
+    function drawGrid(rows, cols) {
+      const canvas = document.getElementById("gridCanvas");
+      const ctx = canvas.getContext("2d");
+      canvas.width = 500;
+      canvas.height = 500;
 
-  <!-- Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      let x = 0, y = 0;
+      for (let i = 0; i < rows * cols; i++) {
+        // Generate random width and height
+        const width = Math.random() * 80 + 20;  // Random width
+        const height = Math.random() * 80 + 20; // Random height
 
+        ctx.fillStyle = "skyblue";  // Fill color
+        ctx.fillRect(x, y, width, height);  // Draw the rectangle
+        ctx.strokeStyle = "black";  // Border color
+        ctx.strokeRect(x, y, width, height);  // Draw the border
+
+        x += width;  // Move x to the right
+
+        // If the row is too wide, move to the next row
+        if (x >= canvas.width) {
+          x = 0;   // Reset x to 0 for the next row
+          y += height;  // Move y down
+        }
+      }
+    }
+
+    // Call the function to draw the grid (4 rows and 5 columns)
+    drawGrid(4, 5);
+  </script>
 </body>
 </html>
