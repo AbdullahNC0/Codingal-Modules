@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum and Trigonometric Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .result p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Carol's Sum and Trigonometric Calculator</h1>
+
+    <div class="input-group">
+        <label for="numbers">Enter numbers to sum (comma separated):</label>
+        <input type="text" id="numbers" placeholder="e.g., 3, 5, 7, 9">
+    </div>
+
+    <button onclick="calculateSum()">Calculate Sum</button>
+
+    <div class="result" id="sumResult"></div>
+
+    <hr>
+
+    <div class="input-group">
+        <label for="angle">Enter angle (in degrees):</label>
+        <input type="number" id="angle" placeholder="e.g., 30">
+    </div>
+
+    <button onclick="calculateTrigValues()">Calculate Trigonometric Values</button>
+
+    <div class="result" id="trigResult"></div>
+</div>
+
+<script>
+
+    function calculateSum() {
+        const numbersInput = document.getElementById('numbers').value;
+        const numbersArray = numbersInput.split(',').map(num => parseFloat(num.trim()));
+        const sum = numbersArray.reduce((acc, num) => acc + num, 0);
+
+        document.getElementById('sumResult').innerHTML = `Sum of numbers: ${sum}`;
+    }
+
+    function calculateTrigValues() {
+        const angle = parseFloat(document.getElementById('angle').value);
+        const angleRadians = angle * (Math.PI / 180);
+
+        const sinValue = Math.sin(angleRadians);
+        const cosValue = Math.cos(angleRadians);
+        const tanValue = Math.tan(angleRadians);
+
+        document.getElementById('trigResult').innerHTML = `
+            <p>Sin(${angle}°) = ${sinValue}</p>
+            <p>Cos(${angle}°) = ${cosValue}</p>
+            <p>Tan(${angle}°) = ${tanValue}</p>
+        `;
+    }
+</script>
+
+</body>
+</html>
