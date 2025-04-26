@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Riya's Info</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f0f8ff;
+    }
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      max-width: 400px;
+      margin: auto;
+    }
+    h2 {
+      color: #333;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      background: #e0f7fa;
+      margin: 5px 0;
+      padding: 8px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <h2 id="riya-name"></h2>
+  <p id="age"></p>
+  <p id="grade"></p>
+  <p id="hobbies"></p>
+  <p id="favoriteSports"></p>
+  <h3>Favorite Colors:</h3>
+  <ul id="color-list"></ul>
+</div>
+
+<script>
+
+  const riya = {
+    name: 'Riya',
+    age: 12,
+    grade: 7,
+    hobbies: ['Drawing'],
+    favoriteSports: ['cricket'],
+    favoriteColors: ['Red', 'Blue', 'Green'],
+    displayInfo: function() {
+
+      document.getElementById('riya-name').textContent = this.name + "'s Info";
+      document.getElementById('age').textContent = `Age: ${this.age}`;
+      document.getElementById('grade').textContent = `Grade: ${this.grade}`;
+      document.getElementById('hobbies').textContent = `Hobbies: ${this.hobbies.join(', ')}`;
+      document.getElementById('favoriteSports').textContent = `Favorite Sports: ${this.favoriteSports.join(', ')}`;
+      
+      const colorList = document.getElementById('color-list');
+      this.favoriteColors.forEach(function(color) {
+        const li = document.createElement('li');
+        li.textContent = color;
+        colorList.appendChild(li);
+      });
+    }
+  };
+
+  window.onload = function() {
+    riya.displayInfo();
+  };
+</script>
+
+</body>
+</html>

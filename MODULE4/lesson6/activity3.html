@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Real time validation</title>
+    </head>
+    <body>
+        <h1>REAL TIME VALIDATION USING JS</h1>
+        <hr>
+
+        <form onsubmit="validate(event)">
+            <label for="email">Email:</label><br>
+            <input type="text" id="email" name="email"><br>
+
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password"><br>
+
+            <label for="age">Age:</label><br>
+            <input type="number" id="age" name="age"><br>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <p id="messege"></p>
+
+        <script src="activity3.js"></script>
+    </body>
+</html>
